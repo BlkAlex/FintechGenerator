@@ -32,7 +32,7 @@ class Main {
         System.out.println("Запущен генератор " + countHumans + " пользователей...\nПожалуйста подождите...");
         Generator.initGlossary();
         ArrayList<Human> humans = new ArrayList<>();
-       // humans = getHumansWithAPI(countHumans);
+        humans = getHumansWithAPI(countHumans);
 
         System.out.println("Получено пользователей  " + (humans.size()));
         int countNotAddedHumans = countHumans - humans.size();
