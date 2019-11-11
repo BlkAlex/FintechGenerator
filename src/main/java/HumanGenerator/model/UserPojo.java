@@ -14,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "age",
         "postcode",
         "city",
+        "cityOfBirthday",
         "street",
         "house",
         "apartment",
@@ -44,6 +45,8 @@ public class UserPojo {
     private String postcode;
     @JsonProperty("city")
     private String city;
+    @JsonProperty("cityOfBirthday")
+    private String cityOfBirthday;
     @JsonProperty("street")
     private String street;
     @JsonProperty("house")
@@ -148,6 +151,17 @@ public class UserPojo {
     @JsonProperty("city")
     public void setCity(String city) {
         this.city = city;
+    }
+
+
+    @JsonProperty("cityOfBirthday")
+    public String getCityOfBirthday() {
+        return cityOfBirthday;
+    }
+
+    @JsonProperty("city")
+    public void setCityOfBirthday(String city) {
+        this.cityOfBirthday = city;
     }
 
     @JsonProperty("street")

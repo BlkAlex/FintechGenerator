@@ -17,6 +17,7 @@ public class Human {
     private int mailIndex;
     private String region;
     private String town;
+    private String townOfBirthday;
     private String street;
     private String numberHouse;
 
@@ -64,6 +65,9 @@ public class Human {
         return town;
     }
 
+    public String getTownOfBirthday() {
+        return townOfBirthday;
+    }
     public String getStreet() {
         return street;
     }
@@ -141,6 +145,11 @@ public class Human {
 
         public Builder setTown(String town) {
             human.town = town;
+            return this;
+        }
+
+        public Builder setTownOfBirthday(String town) {
+            human.townOfBirthday = town;
             return this;
         }
 

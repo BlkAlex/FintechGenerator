@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class InputParameters {
 
-    public final static String FILE_MALE_NAMES = "src/main/resources/MaleNames.txt";
-    public final static String FILE_FEMALE_NAMES = "src/main/resources/FemaleNames.txt";
-    public final static String FILE_MALE_SURNAMES = "src/main/resources/MaleSurnames.txt";
-    public final static String FILE_FEMALE_SURNAMES = "src/main/resources/FemaleSurnames.txt";
-    public final static String FILE_MALE_PATRONYMIC = "src/main/resources/MalePatronymic.txt";
-    public final static String FILE_FEMALE_PATRONYMIC = "src/main/resources/FemalePatronymic.txt";
-    public final static String FILE_COUNTRIES = "src/main/resources/Countries.txt";
-    public final static String FILE_REGIONS = "src/main/resources/Regions.txt";
-    public final static String FILE_TOWNS = "src/main/resources/Towns.txt";
-    public final static String FILE_STREETS = "src/main/resources/Streets.txt";
+    public final static String FILE_MALE_NAMES = "MaleNames.txt";
+    public final static String FILE_FEMALE_NAMES = "FemaleNames.txt";
+    public final static String FILE_MALE_SURNAMES = "MaleSurnames.txt";
+    public final static String FILE_FEMALE_SURNAMES = "FemaleSurnames.txt";
+    public final static String FILE_MALE_PATRONYMIC = "MalePatronymic.txt";
+    public final static String FILE_FEMALE_PATRONYMIC = "FemalePatronymic.txt";
+    public final static String FILE_COUNTRIES = "Countries.txt";
+    public final static String FILE_REGIONS = "Regions.txt";
+    public final static String FILE_TOWNS = "Towns.txt";
+    public final static String FILE_STREETS = "Streets.txt";
     public final static int START_RANGE_MAIL_INDEX = 100000;
     public final static int END_RANGE_MAIL_INDEX = 200000;
     public final static int MIN_YEAR_OF_BIRTH = 1900;
@@ -36,6 +36,7 @@ public class InputParameters {
             namesColumn.add("Возраст");
             namesColumn.add("Пол");
             namesColumn.add("Дата рождения");
+            namesColumn.add("Место рождения");
             namesColumn.add("ИНН");
             namesColumn.add("Почтовый индекс");
             namesColumn.add("Страна");

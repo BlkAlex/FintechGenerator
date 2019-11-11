@@ -29,6 +29,11 @@ class Main {
             countHumans = Generator.getRand(InputParameters.MIN_COUNT_USERS, InputParameters.MAX_COUNT_USERS);
         }
 
+        if (countHumans > InputParameters.MAX_COUNT_USERS) {
+            System.out.println("Введено слишком большое число пользователей, будет сгенерировано  " + InputParameters.MAX_COUNT_USERS + " пользователей.");
+            countHumans = InputParameters.MAX_COUNT_USERS;
+        }
+
         System.out.println("Запущен генератор " + countHumans + " пользователей...\nПожалуйста подождите...");
         Generator.initGlossary();
         ArrayList<Human> humans = new ArrayList<>();

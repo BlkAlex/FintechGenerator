@@ -8,6 +8,7 @@ import HumanGenerator.model.UserPojo;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 public class HumanCreator {
     public static Human getHuman() {
@@ -21,6 +22,7 @@ public class HumanCreator {
                 .setCountry(Generator.getRandomStringFromList(Generator.KeysGlossary.COUNTRIES))
                 .setRegion(Generator.getRandomStringFromList(Generator.KeysGlossary.REGIONS))
                 .setTown(Generator.getRandomStringFromList(Generator.KeysGlossary.TOWNS))
+                .setTownOfBirthday(Generator.getRandomStringFromList(Generator.KeysGlossary.TOWNS))
                 .setStreet(Generator.getRandomStringFromList(Generator.KeysGlossary.STREETS))
                 .setBirthday(birthdayDate)
                 .setAge(Generator.getAgeByDate(birthdayDate))
@@ -45,8 +47,9 @@ public class HumanCreator {
                 .setCountry(userPojo.getCounty() == null ? localGeneratedHuman.getCountry() : userPojo.getCounty())
                 .setRegion(userPojo.getRegion() == null ? localGeneratedHuman.getRegion() : userPojo.getRegion())
                 .setTown(userPojo.getCity() == null ? localGeneratedHuman.getTown() : userPojo.getCity())
+                .setTownOfBirthday(userPojo.getCityOfBirthday() == null ? localGeneratedHuman.getTown() : userPojo.getCityOfBirthday())
                 .setStreet(userPojo.getStreet() == null ? localGeneratedHuman.getStreet() : userPojo.getStreet())
-                .setBirthday(userPojo.getDate() == null ? localGeneratedHuman.getBirthDay() : LocalDate.parse(userPojo.getDate(), DateTimeFormatter.ofPattern("d MMMM yyyy")))
+                .setBirthday(userPojo.getDate() == null ? localGeneratedHuman.getBirthDay() : LocalDate.parse(userPojo.getDate(), DateTimeFormatter.ofPattern("d MMMM yyyy", Locale.forLanguageTag("ru"))))
                 .setAge(userPojo.getAge() == null ? localGeneratedHuman.getAge() : Integer.parseInt(userPojo.getAge()))
                 .setInn(userPojo.getInn() == null ? localGeneratedHuman.getInn() : userPojo.getInn())
                 .setMailIndex(

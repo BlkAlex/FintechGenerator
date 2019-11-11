@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class ExcelCreator {
 
-    private final static String fileName = "users.xls";
+    private final static String fileName = "humans.xls";
 
     public static void createExcelTable(ArrayList<Human> humans, ArrayList<String> namesColumn) {
         HSSFWorkbook workbook = new HSSFWorkbook();
@@ -50,14 +50,15 @@ public class ExcelCreator {
         row.createCell(3).setCellValue(human.getAge());
         row.createCell(4).setCellValue(human.getGender() == Gender.MALE ? "М" : "Ж");
         row.createCell(5).setCellValue(human.getBirthDay().format(DateTimeFormatter.ofPattern("dd-MM-YYYY")));
-        row.createCell(6).setCellValue(human.getInn());
-        row.createCell(7).setCellValue(human.getMailIndex());
-        row.createCell(8).setCellValue(human.getCountry());
-        row.createCell(9).setCellValue(human.getRegion());
-        row.createCell(10).setCellValue(human.getTown());
-        row.createCell(11).setCellValue(human.getStreet());
-        row.createCell(12).setCellValue(human.getNumberHouse());
-        row.createCell(13).setCellValue(human.getNumberFlat());
+        row.createCell(6).setCellValue(human.getTownOfBirthday());
+        row.createCell(7).setCellValue(human.getInn());
+        row.createCell(8).setCellValue(human.getMailIndex());
+        row.createCell(9).setCellValue(human.getCountry());
+        row.createCell(10).setCellValue(human.getRegion());
+        row.createCell(11).setCellValue(human.getTown());
+        row.createCell(12).setCellValue(human.getStreet());
+        row.createCell(13).setCellValue(human.getNumberHouse());
+        row.createCell(14).setCellValue(human.getNumberFlat());
     }
 
     private static HSSFCellStyle getSampleStyle(HSSFWorkbook workbook) {

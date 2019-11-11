@@ -95,16 +95,17 @@ public class Generator {
 
     public static void initGlossary() {
         glossary = new HashMap<>();
-        glossary.put(KeysGlossary.MALE_NAMES.getValue(), FileLoader.getListByFileName(InputParameters.FILE_MALE_NAMES));
-        glossary.put(KeysGlossary.FEMALE_NAMES.getValue(), FileLoader.getListByFileName(InputParameters.FILE_FEMALE_NAMES));
-        glossary.put(KeysGlossary.MALE_SURNAMES.getValue(), FileLoader.getListByFileName(InputParameters.FILE_MALE_SURNAMES));
-        glossary.put(KeysGlossary.FEMALE_SURNAMES.getValue(), FileLoader.getListByFileName(InputParameters.FILE_FEMALE_SURNAMES));
-        glossary.put(KeysGlossary.MALE_PATRONYMIC.getValue(), FileLoader.getListByFileName(InputParameters.FILE_MALE_PATRONYMIC));
-        glossary.put(KeysGlossary.FEMALE_PATRONYMIC.getValue(), FileLoader.getListByFileName(InputParameters.FILE_FEMALE_PATRONYMIC));
-        glossary.put(KeysGlossary.COUNTRIES.getValue(), FileLoader.getListByFileName(InputParameters.FILE_COUNTRIES));
-        glossary.put(KeysGlossary.TOWNS.getValue(), FileLoader.getListByFileName(InputParameters.FILE_TOWNS));
-        glossary.put(KeysGlossary.STREETS.getValue(), FileLoader.getListByFileName(InputParameters.FILE_STREETS));
-        glossary.put(KeysGlossary.REGIONS.getValue(), FileLoader.getListByFileName(InputParameters.FILE_REGIONS));
+        FileLoader fileLoader = new FileLoader();
+        glossary.put(KeysGlossary.MALE_NAMES.getValue(), fileLoader.getListByFileName(InputParameters.FILE_MALE_NAMES));
+        glossary.put(KeysGlossary.FEMALE_NAMES.getValue(), fileLoader.getListByFileName(InputParameters.FILE_FEMALE_NAMES));
+        glossary.put(KeysGlossary.MALE_SURNAMES.getValue(), fileLoader.getListByFileName(InputParameters.FILE_MALE_SURNAMES));
+        glossary.put(KeysGlossary.FEMALE_SURNAMES.getValue(), fileLoader.getListByFileName(InputParameters.FILE_FEMALE_SURNAMES));
+        glossary.put(KeysGlossary.MALE_PATRONYMIC.getValue(), fileLoader.getListByFileName(InputParameters.FILE_MALE_PATRONYMIC));
+        glossary.put(KeysGlossary.FEMALE_PATRONYMIC.getValue(), fileLoader.getListByFileName(InputParameters.FILE_FEMALE_PATRONYMIC));
+        glossary.put(KeysGlossary.COUNTRIES.getValue(), fileLoader.getListByFileName(InputParameters.FILE_COUNTRIES));
+        glossary.put(KeysGlossary.TOWNS.getValue(), fileLoader.getListByFileName(InputParameters.FILE_TOWNS));
+        glossary.put(KeysGlossary.STREETS.getValue(), fileLoader.getListByFileName(InputParameters.FILE_STREETS));
+        glossary.put(KeysGlossary.REGIONS.getValue(), fileLoader.getListByFileName(InputParameters.FILE_REGIONS));
     }
 
     public enum KeysGlossary {

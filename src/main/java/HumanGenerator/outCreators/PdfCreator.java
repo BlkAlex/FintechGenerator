@@ -17,16 +17,16 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class PdfCreator {
-    private final static String FILE_NAME = "users.pdf";
+    private final static String FILE_NAME = "humans.pdf";
     private final static String FONT_PATH = "fonts/my_font.ttf";
 
     public static void createPdfDocument(ArrayList<Human> humans, ArrayList<String> columnsList) throws DocumentException,
             IOException {
-        PdfPTable table = new PdfPTable(new float[]{1, 1, 1, 0.5f, 0.4f, 1, 0.8f, 0.8f, 1, 1, 1.5f, 1, 0.6f, 0.6f});
+        PdfPTable table = new PdfPTable(new float[]{1, 1, 1, 0.5f, 0.4f, 1, 1.3f, 0.9f, 0.8f, 1, 1, 1.3f, 1, 0.6f, 0.6f});
         table.setWidthPercentage(100);
         BaseFont font = BaseFont.createFont(FONT_PATH, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
         for (String nameColumn : columnsList) {
-            table.addCell(new PdfPCell(new Paragraph(nameColumn, new Font(font, 8))));
+            table.addCell(new PdfPCell(new Paragraph(nameColumn, new Font(font, 7))));
         }
         table.setHeaderRows(1);
         PdfPCell[] cells = table.getRow(0).getCells();
@@ -43,6 +43,7 @@ public class PdfCreator {
                             InputParameters.MALE_STRING :
                             InputParameters.FEMALE_STRING)));
             table.addCell(getPDFPcell(human.getBirthDay().format(DateTimeFormatter.ofPattern("dd-MM-YYYY"))));
+            table.addCell(getPDFPcell(human.getTownOfBirthday()));
             table.addCell(getPDFPcell(human.getInn()));
             table.addCell(getPDFPcell(String.valueOf(human.getMailIndex())));
             table.addCell(getPDFPcell(human.getCountry()));
